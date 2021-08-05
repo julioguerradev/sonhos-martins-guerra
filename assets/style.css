@@ -2,13 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
-body{
-    background-color: #fff;
-}
-html{
-    transition: ease-in 0.2s;
-}
 :root{
     /*__Colors__*/
     --dark-red-color: #552521;
@@ -21,6 +14,7 @@ html{
     background: url(../assets/images/wine.png) no-repeat center;
     background-size: contain;
 }
+/*________________________________________DARK-MODE START________________________________________*/
 #dark-mode-label img{
     position: absolute;
     top: 30px;
@@ -29,7 +23,12 @@ html{
     cursor: pointer;
 }
 .dark-mode{
+    transition: ease-in 0.4s;
     background-color: rgb(43, 10, 10);
+}
+.bright-mode{
+    transition: ease-in 0.4s;
+    background-color: #fff;
 }
 /*________________________________________FORM-IMAGE START________________________________________*/
 form{
@@ -37,7 +36,7 @@ form{
     width: 18.75rem;
     height: 31.25rem;
     
-    background: linear-gradient(to bottom, #552521, #C42002);
+    background: linear-gradient(to bottom, #552521, #C42002, transparent);
     /* background: rgba(255, 255, 255, .2);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); 
