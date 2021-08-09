@@ -16,17 +16,18 @@
         </label>
         <form action="">
             <div onmouseover="mouseOn()" onmouseout="mouseOut()" class="photo-wrapper">
-                <img class="perfil-photo" src="./assets/images/perfil-none.png" alt="perfil" style="object-fit: cover;">
-                <label for="choose-photo" >Enviar foto</label>
-                <input type="file" id="choose-photo" accept="image/*" multiple onchange="handleFiles(this.files)">
+                <img id="myimage" class="perfil-photo" src="./assets/images/perfil-none.png" alt="perfil" >
+                <label id="label" for="choose-photo">Enviar foto</label>
+                <input  type="file" id="choose-photo" accept="image/*" onchange="onFileSelected(event)"
+                 hidden>
             </div>
             <div class="form-text">
                 <input type="text" placeholder="Seu nome" required>
                 <input type="submit" name="" id="">
             </div>
-            span
         </form>
     </main>
+    
     <script src="./script.js"></script>
 </body>
 </html>
