@@ -11,15 +11,14 @@
 <body class="bright-mode">
      <main class="container">
          <label id="dark-mode-label" for="btnDarkMode">
-            <img onmouseup="darkMode(this)" src="./assets/images/red-moon-icon-229530.png" alt="">
+            <img id="alt-mode" src="./assets/images/red-moon-icon-229530.png" alt="">
             <input id="btnDarkMode" type="checkbox" aria-label="btnDarkMode" hidden>
         </label>
-        <form action="">
-            <div onmouseover="mouseOn()" onmouseout="mouseOut()" class="photo-wrapper">
-                <img id="myimage" class="perfil-photo" src="./assets/images/perfil-none.png" alt="perfil" >
-                <label id="label" for="choose-photo">Enviar foto</label>
-                <input  type="file" id="choose-photo" accept="image/*" onchange="onFileSelected(event)"
-                 hidden>
+        <form action="./list.html">
+            <div id="photo-wrapper">
+                <img id="myimage" src="./assets/images/perfil-none.png" alt="perfil">
+                <label id="label" class="select-img" for="choose-photo">Enviar foto</label>
+                <input  type="file" id="choose-photo" accept="image/*" hidden>
             </div>
             <div class="form-text">
                 <input type="text" placeholder="Seu nome" required>

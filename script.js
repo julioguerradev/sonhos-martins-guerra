@@ -1,12 +1,18 @@
-function mouseOn(){
-    document.getElementsByTagName("label")[1].setAttribute("class","select-img");
-}
-function mouseOut(){
-    document.getElementsByTagName("label")[1].className = "";
-}
 //______________________________________________________________
+let imageContain = document.getElementById("photo-wrapper");
+let chooseButton = document.getElementById("label");
 
-function darkMode(){
+imageContain.addEventListener('mouseenter', function(){
+    chooseButton.style.opacity="1";
+});
+imageContain.addEventListener('mouseleave', function(){
+    chooseButton.style.opacity="0";
+});
+
+
+//______________________________________________________________
+let buttonDark = document.getElementById('alt-mode');
+buttonDark.addEventListener('click', function(){
     document.getElementsByTagName("input");
     let checkbox = document.getElementById("btnDarkMode");
     let dark = document.body;
@@ -15,20 +21,34 @@ function darkMode(){
     }else{
         dark.setAttribute("class","dark-mode");
     }
+    localStorage.setItem('mode', dark.result);
+});
+//______________________________________________________________
+let picture = document.getElementById('myimage');
+let file = document.getElementById('choose-photo')
+
+file.addEventListener('change', function(){
+    let profilePic = this.files[0];
+
+    if (profilePic){
+        let reader = new FileReader();//O objeto FileReader permite aplicações web ler assincronamente o conteúdo dos arquivos (ou buffers de dados puros) do computador do usuário, utilizando o objeto File ou Blob para especificar o arquivo ou os dados a serem lidos
+
+        reader.addEventListener('load', function(){
+            picture.setAttribute('src', reader.result)
+            localStorage.setItem('image', reader.result)
+        })
+        reader.readAsDataURL(profilePic)
+    }
+ })
+
+document.addEventListener('DOMContentLoaded', setPhoto);//O evento DOMContentLoaded é acionado quando todo o HTML foi completamente carregado e analisado, sem aguardar pelo CSS, imagens, e subframes para encerrar o carregamento. Um evento muito diferente - load - deve ser usado apenas para detectar uma página completamente carregada.
+
+function setPhoto(){
+    let newImage = localStorage.getItem('image')
+    if(newImage){
+        document.getElementById('myimage').setAttribute('src', newImage)
+    } 
 }
 //______________________________________________________________
-function onFileSelected(event) {
-    let selectedFile = event.target.files[0];
-    let reader = new FileReader();
 
-    let imgtag = document.getElementById("myimage");
-    imgtag.title = selectedFile.name;
-
-    reader.onload = function(event) {
-      imgtag.src = event.target.result;
-      };
-
-    reader.readAsDataURL(selectedFile);
-    
-}
 

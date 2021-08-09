@@ -49,7 +49,7 @@ form{
     border-radius: 15px;
     box-shadow: var(--pattern-box-shadow);
 }
-.photo-wrapper{
+#photo-wrapper{
     position: relative;
     margin-left: 20%;
     display: flex;
@@ -58,16 +58,13 @@ form{
     height: 12rem;
     
     border-radius: 50%;
-    border: 4px solid white;
+    border: 4px solid var(--dark-red-color);
+    box-shadow: var(--pattern-box-shadow);
     
     overflow: hidden;
     cursor: pointer;
 }
-.perfil-photo{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 .select-img{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
@@ -78,12 +75,14 @@ form{
     width: 100%;
     
     cursor: pointer;
-    transition: 0.5s;
-
     margin-top: 8rem;
-
-    border-bottom-left-radius: 70px;
-    border-bottom-right-radius: 70px;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+#myimage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /*________________________________________FORM-TEXT START________________________________________*/
 .form-text{
