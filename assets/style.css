@@ -17,9 +17,9 @@
 /*________________________________________DARK-MODE START________________________________________*/
 #dark-mode-label img{
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 30px;
-    width: 50px;
+    width: 40px;
     cursor: pointer;
 }
 .dark-mode{
@@ -36,7 +36,7 @@ form{
     width: 18.75rem;
     height: 31.25rem;
     
-    background: linear-gradient(to bottom, #552521, #C42002, transparent);
+    background: linear-gradient(to bottom, var(--dark-red-color), transparent);
     /* background: rgba(255, 255, 255, .2);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); 

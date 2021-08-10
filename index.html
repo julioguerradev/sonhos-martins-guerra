@@ -8,25 +8,33 @@
     <link rel="stylesheet" href="./assets/style.css">
     
 </head>
-<body class="bright-mode">
-     <main class="container">
-         <label id="dark-mode-label" for="btnDarkMode">
-            <img id="alt-mode" src="./assets/images/red-moon-icon-229530.png" alt="">
-            <input id="btnDarkMode" type="checkbox" aria-label="btnDarkMode" hidden>
-        </label>
-        <form action="./list.html">
-            <div id="photo-wrapper">
-                <img id="myimage" src="./assets/images/perfil-none.png" alt="perfil">
-                <label id="label" class="select-img" for="choose-photo">Enviar foto</label>
-                <input  type="file" id="choose-photo" accept="image/*" hidden>
-            </div>
-            <div class="form-text">
-                <input type="text" placeholder="Seu nome" required>
-                <input type="submit" name="" id="">
-            </div>
-        </form>
-    </main>
+<body>
+<!--__________________ main section start __________________-->
+<main class="container">
+    <!--__________________ checkbox - moon image __________________-->
+    <label id="dark-mode-label" for="btnDarkMode">
+        <img id="alt-mode" src="./assets/images/red-moon-icon-229530.png" alt="">
+        <input id="btnDarkMode" type="checkbox" aria-label="btnDarkMode" hidden>
+    </label>
     
-    <script src="./script.js"></script>
+    <!--__________________ form section start __________________-->
+    <form action="./list.html">
+        <!--__________________ profile picture - file input __________________-->
+        <div id="photo-wrapper">
+            <img id="myimage" src="./assets/images/perfil-none.png" alt="perfil">
+            <label id="label" class="select-img" for="choose-photo">Enviar foto</label>
+            <input  type="file" id="choose-photo" accept="image/*" hidden>
+        </div>
+        <!--__________________ squares of input __________________-->
+        <div class="form-text">
+            <input id="userName" type="text" placeholder="Seu nome" required>
+            <input id="submit" type="submit">
+        </div>
+    </form>
+    <!--__________________ form section end __________________-->
+</main>
+<!--__________________ main section end __________________-->
+    
+<script src="./script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-//______________________________________________________________
+//______________________________________________________________ FUNCTION HOVER FILE ______________________________________________________________
 let imageContain = document.getElementById("photo-wrapper");
 let chooseButton = document.getElementById("label");
 
@@ -10,22 +10,30 @@ imageContain.addEventListener('mouseleave', function(){
 });
 
 
-//______________________________________________________________
+//______________________________________________________________ FUNCTION CHANGE DARK MODE ______________________________________________________________
 let buttonDark = document.getElementById('alt-mode');
+
 buttonDark.addEventListener('click', function(){
-    document.getElementsByTagName("input");
-    let checkbox = document.getElementById("btnDarkMode");
+    document.getElementsByTagName('input');
+    let checkbox = document.getElementById('btnDarkMode');
     let dark = document.body;
+    
     if (checkbox.checked){
-        dark.setAttribute("class","bright-mode");
+        dark.setAttribute('class','bright-mode');
+        localStorage.setItem('check', document.body.getAttribute('class'))
     }else{
-        dark.setAttribute("class","dark-mode");
+        dark.setAttribute('class','dark-mode');
+        localStorage.setItem('check', document.body.getAttribute('class'))
     }
-    localStorage.setItem('mode', dark.result);
 });
-//______________________________________________________________
+
+document.addEventListener('DOMContentLoaded', function(){
+    document.body.setAttribute('class', localStorage.getItem('check'));
+});
+
+//______________________________________________________________ FUNCTION CHOOSE AND PUT IMAGE ______________________________________________________________ 
 let picture = document.getElementById('myimage');
-let file = document.getElementById('choose-photo')
+let file = document.getElementById('choose-photo');
 
 file.addEventListener('change', function(){
     let profilePic = this.files[0];
@@ -34,21 +42,30 @@ file.addEventListener('change', function(){
         let reader = new FileReader();//O objeto FileReader permite aplicações web ler assincronamente o conteúdo dos arquivos (ou buffers de dados puros) do computador do usuário, utilizando o objeto File ou Blob para especificar o arquivo ou os dados a serem lidos
 
         reader.addEventListener('load', function(){
-            picture.setAttribute('src', reader.result)
-            localStorage.setItem('image', reader.result)
+            picture.setAttribute('src', reader.result);
+            localStorage.setItem('image', reader.result);
         })
-        reader.readAsDataURL(profilePic)
+        reader.readAsDataURL(profilePic);
     }
  })
 
 document.addEventListener('DOMContentLoaded', setPhoto);//O evento DOMContentLoaded é acionado quando todo o HTML foi completamente carregado e analisado, sem aguardar pelo CSS, imagens, e subframes para encerrar o carregamento. Um evento muito diferente - load - deve ser usado apenas para detectar uma página completamente carregada.
 
 function setPhoto(){
-    let newImage = localStorage.getItem('image')
+    let newImage = localStorage.getItem('image');
     if(newImage){
-        document.getElementById('myimage').setAttribute('src', newImage)
+        document.getElementById('myimage').setAttribute('src', newImage);
     } 
 }
-//______________________________________________________________
+//______________________________________________________________ GET NAME ______________________________________________________________
+
+let sendButton = document.getElementById("submit");
+sendButton.addEventListener('click', function(){
+    let getName = document.getElementById("userName").value;
+
+    localStorage.setItem('nickname',getName);
+
+    let n = localStorage.getItem('nickname');
+});
 
 
