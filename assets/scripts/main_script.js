@@ -17,18 +17,27 @@ buttonDark.addEventListener('click', function(){
     document.getElementsByTagName('input');
     let checkbox = document.getElementById('btnDarkMode');
     let dark = document.body;
+    let freelink = document.getElementById('freelink');
     
     if (checkbox.checked){
         dark.setAttribute('class','bright-mode');
         localStorage.setItem('check', document.body.getAttribute('class'))
+        
+        freelink.setAttribute('class','freelink1')
+        localStorage.setItem('checkLink', freelink.getAttribute('class'))
     }else{
         dark.setAttribute('class','dark-mode');
         localStorage.setItem('check', document.body.getAttribute('class'))
+        
+        freelink.setAttribute('class','freelink2')
+        localStorage.setItem('checkLink', freelink.getAttribute('class'))
     }
 });
 
 document.addEventListener('DOMContentLoaded', function(){
     document.body.setAttribute('class', localStorage.getItem('check'));
+
+    document.getElementById('freelink').setAttribute('class',localStorage.getItem('checkLink'));
 });
 
 //______________________________________________________________ FUNCTION CHOOSE AND PUT IMAGE ______________________________________________________________ 

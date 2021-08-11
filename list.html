@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de desejos</title>
+    <title>Sonhos do casal</title>
+
+    <link rel="stylesheet" href="./assets/styles/list_style.css">
+    <link rel="icon" href="https://img.icons8.com/color/80/000000/couple-man-woman.png">
+    
 </head>
 <body>
-    <div>
-        <img src="" id="imgPreview" alt="Preview"/>
+<!--__________________ main section start __________________-->
+<main>
+    <!--__________________ checkbox - moon image __________________-->
+
+    <label id="dark-mode-label" for="btnDarkMode">
+        <img id="alt-mode" src="./assets/images/red-moon-icon-229530.png" alt="">
+        <input id="btnDarkMode" type="checkbox" aria-label="btnDarkMode" hidden>
+    </label>
+    <div class="insideContainer">
+        <a href="/index.html"><img class="iconHome" src="https://img.icons8.com/material-rounded/24/fa314a/home.png"/></a> 
+        <div id="photo-wrapper">
+            <img id="myimage" src="./assets/images/perfil-none.png" alt="perfil">
+        </div>
     </div>
-    <script src="./script.js"></script>
+</main>
+<a class="freelink" href="https://icons8.com/icon/86527/casa">Casa icon by Icons8</a>
+<a class="freelink" href="https://icons8.com/icon/32018/casal-homem-mulher">Casal homem mulher icon by Icons8</a>
+
+<script src="/assets/scripts/list_scripts.js"></script>
 </body>
 </html>

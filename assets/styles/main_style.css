@@ -11,14 +11,14 @@
 /*________________________________________CONTAINER START________________________________________*/
 .container{
     height: 656px;
-    background: url(../assets/images/wine.png) no-repeat center;
+    background: url(/assets/images/wine.png) no-repeat center;
     background-size: contain;
 }
 /*________________________________________DARK-MODE START________________________________________*/
 #dark-mode-label img{
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 15px;
     width: 40px;
     cursor: pointer;
 }
@@ -52,7 +52,6 @@ form{
 #photo-wrapper{
     position: relative;
     margin-left: 20%;
-    display: flex;
     
     width: 12rem;
     height: 12rem;
@@ -77,7 +76,7 @@ form{
     cursor: pointer;
     margin-top: 8rem;
     opacity: 0;
-    transition: opacity 0.6s ease-out;
+    transition: opacity 0.4s ease-out;
 }
 #myimage{
     width: 100%;
@@ -125,4 +124,17 @@ input[type="submit"]:hover{
     
     box-shadow: inset 160px 0 0 0 var(--small-red-color);
 }
+/*________________________________________LINK START________________________________________*/
+.freelink1,
+.freelink1:visited,
+.freelink2{
+    color: rgb(218, 206, 206);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: .3s ease-out;
+}
 
+.freelink2,
+.freelink2:visited{
+    color: #36130d;
+}
