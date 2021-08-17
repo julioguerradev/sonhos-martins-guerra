@@ -1,4 +1,3 @@
 {
-    "liveServer.settings.port": 5503,
-    "typescript.preferences.includePackageJsonAutoImports": "off"
+    "liveServer.settings.port": 5500
 }
