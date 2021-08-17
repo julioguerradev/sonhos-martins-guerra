@@ -11,7 +11,7 @@
 /*________________________________________CONTAINER START________________________________________*/
 .container{
     height: 656px;
-    background: url(../assets/images/wine.png) no-repeat center;
+    background: url(../images/wine.png) no-repeat center;
     background-size: contain;
 }
 /*________________________________________DARK-MODE START________________________________________*/
@@ -21,6 +21,10 @@
     right: 30px;
     width: 40px;
     cursor: pointer;
+}
+#dark-mode-label img:hover{
+    transition: .4s;
+    transform: translateY(-2px);
 }
 .dark-mode{
     transition: ease-in 0.4s;
@@ -123,6 +127,7 @@ input[type="submit"]:hover{
     cursor: pointer;
     color: white;
     
+    box-shadow: inset 160px 0 0 0 var(--small-red-color);
     box-shadow: inset 160px 0 0 0 var(--small-red-color);
 }
 /*________________________________________LINK START________________________________________*/

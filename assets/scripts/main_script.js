@@ -73,8 +73,6 @@ sendButton.addEventListener('click', function(){
     let getName = document.getElementById("userName").value;
 
     localStorage.setItem('nickname',getName);
-
-    let n = localStorage.getItem('nickname');
 });
 
 

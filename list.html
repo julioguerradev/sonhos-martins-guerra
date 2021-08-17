@@ -19,14 +19,22 @@
         <input id="btnDarkMode" type="checkbox" aria-label="btnDarkMode" hidden>
     </label>
     <div class="insideContainer">
-        <a href="/index.html"><img class="iconHome" src="https://img.icons8.com/material-rounded/24/fa314a/home.png"/></a> 
+        <a href="/index.html"><img class="iconHome" src="https://img.icons8.com/material-rounded/24/fa314a/home.png"/></a>
+        <p id="currentDate"></p>
         <div id="photo-wrapper">
             <img id="myimage" src="./assets/images/perfil-none.png" alt="perfil">
         </div>
     </div>
+    <h4 id="welcome"></h4>
+    <form action="">
+        <input type="text" id="doList">
+        <input type="date" id="setDate">
+        <input type="time" id="setTime">
+        <input type="submit" id="sendList" placeholder="Enviar">
+    </form>
+    <div id="containerList"></div>
 </main>
-<a class="freelink" href="https://icons8.com/icon/86527/casa">Casa icon by Icons8</a>
-<a class="freelink" href="https://icons8.com/icon/32018/casal-homem-mulher">Casal homem mulher icon by Icons8</a>
+<a id="freelink" href="https://icons8.com/icon/86527/casa">Casa icon by Icons8</a>
 
 <script src="/assets/scripts/list_scripts.js"></script>
 </body>
