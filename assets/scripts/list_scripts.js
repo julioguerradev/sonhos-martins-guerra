@@ -52,24 +52,42 @@ const nameOfDoList = document.getElementById('doList');
 const dateOfDoList = document.getElementById('setDate');
 const timeOfDoList = document.getElementById('setTime');
 const sendButton = document.getElementById('sendList');
-const result = document.getElementById('containerList');
+const result = document.getElementsByTagName('ol')[0];
 
 sendButton.addEventListener('click', _=>{
     let descriptions = new Array();
+    let days = new Array();
+    let hours = new Array();
 
     if(localStorage.hasOwnProperty('descriptions')){
         descriptions = JSON.parse(localStorage.getItem('descriptions'));
     }
+    if(localStorage.hasOwnProperty('days')){
+      days = JSON.parse(localStorage.getItem('days'))
+    }
+    if(localStorage.hasOwnProperty('hours')){
+      hours = JSON.parse(localStorage.getItem('hours'))
+    }
 
     /* Adiciona um novo valor no array criado */
     descriptions.push({title: nameOfDoList.value});
+    days.push({title: dateOfDoList.value});
+    hours.push({title: timeOfDoList.value});
 
     /* Salva o item */
     localStorage.setItem('descriptions', JSON.stringify(descriptions));
+    localStorage.setItem('days', JSON.stringify(days));
+    localStorage.setItem('hours', JSON.stringify(hours));
 
     /* Exibe o resultado */
     if(dateOfDoList.value ==='' && timeOfDoList.value === ''){
-      result.insertAdjacentHTML('beforeend', `<li class='x'>${nameOfDoList.value}</li>`);
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li>`);
+    }else if (dateOfDoList.value ===''){
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li> às ${timeOfDoList.value}`);
+    }else if(timeOfDoList.value === ''){
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li> no dia: ${dateOfDoList.value}`);
+    }else{
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li> na data: ${dateOfDoList.value} às: ${timeOfDoList.value}`);
     }
 });
  /**
