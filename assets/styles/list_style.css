@@ -99,7 +99,7 @@
     
     width: 18.75rem;
     
-    top: 18.75rem;
+    top: 17.6rem;
     left: 3.125rem;
     
     font-size: 1.2rem;
@@ -114,7 +114,7 @@
     border-radius: 5px;
     box-shadow: var(--pattern-box-shadow);
 
-    top: 24rem;
+    top: 22.3rem;
     left: 3.125rem;
 }
 #doList{
@@ -188,19 +188,34 @@
 #containerList{
     position: absolute;
     width: 17rem;
-    height: 200px;
+    max-height: 150px;
     padding: 15px;
+    overflow-y: scroll;
 
-    
     background: linear-gradient(to bottom, var(--small-red-color), var(--dark-red-color));
 
-    top: 38rem;
+    top: 34rem;
     left: 12.5rem;
     transform: translate(-50%, -50%);
 
     box-shadow: var(--pattern-box-shadow);
     border-radius: 5px;
+    
+}
+#containerList::-webkit-scrollbar-thumb {
+    background-color: rgb(112, 9, 9);
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+#containerList::-webkit-scrollbar {
+    width: 16px;
+}
+ol{
     list-style: none;
+}
+li{
+    color: white;
 }
 
 /*________________________________________LINK START________________________________________*/

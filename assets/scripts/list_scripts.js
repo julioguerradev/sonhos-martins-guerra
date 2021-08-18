@@ -83,11 +83,11 @@ sendButton.addEventListener('click', _=>{
     if(dateOfDoList.value ==='' && timeOfDoList.value === ''){
       result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li>`);
     }else if (dateOfDoList.value ===''){
-      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li> às ${timeOfDoList.value}`);
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br> às ${timeOfDoList.value}</li>`);
     }else if(timeOfDoList.value === ''){
-      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li> no dia: ${dateOfDoList.value}`);
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br> no dia: ${dateOfDoList.value}</li>`);
     }else{
-      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value}</li> na data: ${dateOfDoList.value} às: ${timeOfDoList.value}`);
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br>  na data: ${dateOfDoList.value} <br> às: ${timeOfDoList.value}</li>`);
     }
 });
  /**
