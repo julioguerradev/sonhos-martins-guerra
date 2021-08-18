@@ -68,7 +68,6 @@ sendButton.addEventListener('click', function(){
 
 let itemoflistString = localStorage.getItem('firstItem');
 let itemoflistObject = JSON.parse(itemoflistString);
-console.log(itemoflistObject.title);
 
 
 
