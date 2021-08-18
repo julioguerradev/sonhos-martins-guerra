@@ -48,26 +48,41 @@ document.addEventListener('DOMContentLoaded', function(){
 let nick = localStorage.getItem('nickname');
 let welcome = document.getElementById('welcome').textContent = 'Bem vindo (a), ' + nick + ' faça uma lista dos seus maiores sonhos com seu parceiro (a)'
 //______________________________________________________________ set NAME/DATE/TIME FUNCTION  _______________________________________________________
-let sendButton = document.getElementById('sendList');
-sendButton.addEventListener('click', function(){
-    let nameOfDoList = document.getElementById('doList').value;
-    let dateOfDoList = document.getElementById('setDate').value;
-    let timeOfDoList = document.getElementById('setTime').value;
+const nameOfDoList = document.getElementById('doList');
+const dateOfDoList = document.getElementById('setDate');
+const timeOfDoList = document.getElementById('setTime');
+const sendButton = document.getElementById('sendList');
+const result = document.getElementById('containerList');
 
+sendButton.addEventListener('click', _=>{
+    let descriptions = new Array();
 
-
-
-    let itemOfList = {
-        title: nameOfDoList, 
-        date: dateOfDoList, 
-        time: timeOfDoList
+    if(localStorage.hasOwnProperty('descriptions')){
+        descriptions = JSON.parse(localStorage.getItem('descriptions'));
     }
-    localStorage.setItem('firstItem', JSON.stringify(itemOfList));
 
-})
+    /* Adiciona um novo valor no array criado */
+    descriptions.push({title: nameOfDoList.value});
 
-let itemoflistString = localStorage.getItem('firstItem');
-let itemoflistObject = JSON.parse(itemoflistString);
+    /* Salva o item */
+    localStorage.setItem('descriptions', JSON.stringify(descriptions));
+
+    /* Exibe o resultado */
+    if(dateOfDoList.value ==='' && timeOfDoList.value === ''){
+      result.insertAdjacentHTML('beforeend', `<li class='x'>${nameOfDoList.value}</li>`);
+    }
+});
+ /**
+  * Função responsável por carregar o conteúdo
+  */
+ let x = JSON.parse(localStorage.getItem('days'));
+  window.addEventListener("load", _ => {
+    if (localStorage.hasOwnProperty("descriptions")) {
+      JSON.parse(localStorage.getItem('descriptions')).forEach(description =>{
+        result.insertAdjacentHTML('beforeend', `<li>${description.title}</li>`);
+      })
+    }
+  })
 
 
 

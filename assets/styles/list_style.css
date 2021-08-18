@@ -178,7 +178,7 @@ form{
     top: .9rem;
     left: 14rem;
 }
-.sendList:hover{
+#sendList:hover{
     cursor: pointer;
 
     transition: .4s;
@@ -186,18 +186,25 @@ form{
     
 }
 #containerList{
-    position: relative;
-    width: 18.75rem;
+    position: absolute;
+    width: 17rem;
+    height: 200px;
+    padding: 15px;
+
     
     background: linear-gradient(to bottom, var(--small-red-color), var(--dark-red-color));
 
-    top: 3rem;
-    left: 50%;
+    top: 38rem;
+    left: 12.5rem;
     transform: translate(-50%, -50%);
 
     box-shadow: var(--pattern-box-shadow);
     border-radius: 5px;
+    list-style: none;
 }
+
+/*________________________________________LINK START________________________________________*/
+
 
 /*________________________________________LINK START________________________________________*/
 .freelink1,
