@@ -30,6 +30,8 @@
 - [x] Dark-mode habilitado;
 - [x] Dark-mode salvo no navegador;
 - [x] Página de Log-in;
+- [ ] Responsividade;
+- [ ] Harmonização do layout;
 
 ### Pré-requisitos
 
