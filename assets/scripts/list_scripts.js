@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 //______________________________________________________________ GET NAME FUNCTION  ______________________________________________________________
 let nick = localStorage.getItem('nickname');
-let welcome = document.getElementById('welcome').textContent = 'Bem vindo (a), ' + nick + ' faça uma lista dos seus maiores sonhos com seu parceiro (a)'
+let welcome = document.getElementById('welcome').textContent = 'Bem vindo (a) ' + nick + ', defina seus sonhos com seu parceiro. Clique para deletar.'
 //______________________________________________________________ set NAME/DATE/TIME FUNCTION  _______________________________________________________
 const nameOfDoList = document.getElementById('doList');
 const dateOfDoList = document.getElementById('setDate');
@@ -85,7 +85,7 @@ sendButton.addEventListener('click', _=>{
     }else if (dateOfDoList.value ===''){
       result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br> às ${timeOfDoList.value}</li>`);
     }else if(timeOfDoList.value === ''){
-      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br> no dia: ${dateOfDoList.value}</li>`);
+      result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br> Data: ${dateOfDoList.value}</li>`);
     }else{
       result.insertAdjacentHTML('beforeend', `<li>${nameOfDoList.value} <br>  na data: ${dateOfDoList.value} <br> às: ${timeOfDoList.value}</li>`);
     }
@@ -93,14 +93,17 @@ sendButton.addEventListener('click', _=>{
  /**
   * Função responsável por carregar o conteúdo
   */
- let x = JSON.parse(localStorage.getItem('days'));
+  let day = JSON.parse(localStorage.getItem('days'));
+  let hour = JSON.parse(localStorage.getItem('hours'));
+  let i = -1;
   window.addEventListener("load", _ => {
-    if (localStorage.hasOwnProperty("descriptions")) {
+    if (localStorage.hasOwnProperty("descriptions") && localStorage.hasOwnProperty('days') && localStorage.hasOwnProperty('hours')) {
       JSON.parse(localStorage.getItem('descriptions')).forEach(description =>{
-        result.insertAdjacentHTML('beforeend', `<li>${description.title}</li>`);
-      })
-    }
-  })
+        i+=1;
+        result.insertAdjacentHTML('beforeend', `<div class='test'><li>${description.title}</li> Data: ${day[i].title.split('-').reverse().join('/')} às: ${hour[i].title}</div> `);
+        })
+      }
+    })
 
 
 

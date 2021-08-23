@@ -217,6 +217,16 @@ ol{
 li{
     color: white;
 }
+.test{
+    width: 90%;
+    padding: 10px 10px 10px 30px;
+}
+.test:hover{
+    transition: all .4s;
+    background: #36130dbb;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
 /*________________________________________LINK START________________________________________*/
 
