@@ -128,7 +128,6 @@ input[type="submit"]:hover{
     color: white;
     
     box-shadow: inset 160px 0 0 0 var(--small-red-color);
-    box-shadow: inset 160px 0 0 0 var(--small-red-color);
 }
 /*________________________________________LINK START________________________________________*/
 .freelink1,
